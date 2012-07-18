@@ -82,6 +82,7 @@ module Zuora::Objects
       result = response_hash[type][:result]
       if result[:success]
         subscription.id = result[:subscription_id]
+        account.id = result[:account_id]
         subscription.clear_changed_attributes!
         @previously_changed = changes
         @changed_attributes.clear
